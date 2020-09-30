@@ -132,13 +132,13 @@ export const DataReducer = createReducer(
   // on(ActionSetTransactions, (state, {data}) => {
   //   return {
   //     ...state,
-  //     transactionNgrxEntity: TransactionEntityAdapter.addAll(data, state.transactionNgrxEntity)
+  //     transactionNgrxEntity: TransactionEntityAdapter.setAll(data, state.transactionNgrxEntity)
   //   };
   // }),
   // on(ActionSetCategories, (state, {data}) => {
   //   return {
   //     ...state,
-  //     categoryNgrxEntity: CategoryEntityAdapter.addAll(data, state.categoryNgrxEntity)
+  //     categoryNgrxEntity: CategoryEntityAdapter.setAll(data, state.categoryNgrxEntity)
   //   };
   // }),
 );
