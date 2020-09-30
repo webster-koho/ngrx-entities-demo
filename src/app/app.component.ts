@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ActionGetCategories, ActionGetTransactions } from './store/actions/data.actions';
 import {
@@ -17,7 +17,7 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   rawTransactions$ = this.store.select(SelectRawTransactions);
   rawCategories$ = this.store.select(SelectRawCategories);
   transactionCombined$ = this.store.select(SelectTransactionCombined);
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
   constructor(private store: Store<any>) {}
 
-  ngOnInit() {
+  dispatchActions(): void {
     this.store.dispatch(ActionGetTransactions());
     this.store.dispatch(ActionGetCategories());
   }

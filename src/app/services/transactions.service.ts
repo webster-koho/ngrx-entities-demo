@@ -23,7 +23,7 @@ export class TransactionsService {
     setTimeout(() => {
       response.next(TransactionData);
       response.complete();
-    }, 1500);
+    }, 500);
 
     return response;
   }

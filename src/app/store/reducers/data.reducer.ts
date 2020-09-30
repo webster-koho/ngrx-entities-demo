@@ -43,6 +43,9 @@ export const InitialDataState: DataState = {
 
 export const DataReducer = createReducer(
   InitialDataState,
+
+  //////////////////////////////////////////////////////////
+
   on(ActionSetTransactions, (state, {data}) => {
     return {
       ...state,
@@ -79,10 +82,7 @@ export const DataReducer = createReducer(
   //   data.forEach(transaction => {
   //     newIds.push(transaction.guid);
   //     newEntities[transaction.guid] = {
-  //       guid: transaction.guid,
-  //       label: transaction.label,
-  //       category: transaction.category,
-  //       amount: transaction.amount
+  //       ...transaction
   //     };
   //   });
 
@@ -101,8 +101,7 @@ export const DataReducer = createReducer(
   //   data.forEach(category => {
   //     newIds.push(category.id);
   //     newEntities[category.id] = {
-  //       id: category.id,
-  //       label: category.label,
+  //       ...category
   //     };
   //   });
 

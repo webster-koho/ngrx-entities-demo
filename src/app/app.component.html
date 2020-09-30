@@ -1,15 +1,16 @@
-app component
+<button (click)="dispatchActions()">Get Data!</button>
 
 <div class="container">
-  <ul>
-    <li *ngFor="let transaction of rawTransactions$ | async">{{ transaction.label }}</li>
+
+  <ul *ngIf="rawTransactions$ | async as transactions">
+    <li *ngFor="let transaction of transactions">{{ transaction.label }}</li>
   </ul>
-  <ul>
-    <li *ngFor="let category of rawCategories$ | async">{{ category.label }}</li>
+  <ul *ngIf="rawCategories$ | async as rawCategories">
+    <li *ngFor="let category of rawCategories">{{ category.label }}</li>
   </ul>
 
-  <ul>
-    <li *ngFor="let transaction of transactionCombined$ | async">{{ transaction.label }} - {{ transaction.category }}</li>
+  <ul *ngIf="transactionCombined$ | async as transactionCombined">
+    <li *ngFor="let transaction of transactionCombined">{{ transaction.label }} - {{ transaction.category }}</li>
   </ul>
 
   <!-- ---------------------------------------- -->
@@ -21,8 +22,8 @@ app component
     <li *ngFor="let categoryId of categories.ids">{{ categories.entities[categoryId].label }}</li>
   </ul>
 
-  <ul>
-    <li *ngFor="let transaction of transactionCombined$ | async">{{ transaction.label }} - {{ transaction.category }}</li>
+  <ul *ngIf="transactionCombined$ | async as transactionCombined">
+    <li *ngFor="let transaction of transactionCombined">{{ transaction.label }} - {{ transaction.category }}</li>
   </ul> -->
 
   <!-- ---------------------------------------- -->

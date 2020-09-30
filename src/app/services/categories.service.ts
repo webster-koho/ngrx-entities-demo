@@ -20,7 +20,7 @@ export class CategoriesService {
     setTimeout(() => {
       response.next(CategoryData);
       response.complete();
-    }, 1500);
+    }, 500);
 
     return response;
   }
